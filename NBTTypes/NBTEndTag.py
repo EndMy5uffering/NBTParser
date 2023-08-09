@@ -1,4 +1,4 @@
-from NBTTypes.NBTTag import NBTTag
+from .NBTTag import NBTTag
 
 class NBTEndTag(NBTTag):
 
