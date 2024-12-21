@@ -59,7 +59,7 @@ class NBTScanner:
         while n and self.has_next():
             buff.append(self.data[self.current])
             self.current += 1
-            n = n - 1
+            n = n - 1 #what is this used for???
         if not self.has_next():
             raise StopIteration
         return bytearray(buff)
@@ -76,7 +76,7 @@ def parse_end_tag(iter: NBTScanner, has_name: bool = True) -> NBTEndTag:
     return NBTEndTag('TAG_End')
 
 def parse_byte_tag(iter: NBTScanner, has_name: bool = True) -> NBTByteTag:
-    return NBTByteTag(parse_tag_name(iter, has_name, 'NBT_BYTE_TAG'), c_byte(iter.next()))
+    return NBTByteTag(parse_tag_name(iter, has_name, 'NBT_BYTE_TAG'), c_byte(iter.next()[0]))
 
 def parse_short_tag(iter: NBTScanner, has_name: bool = True) -> NBTShortTag:
     return NBTShortTag(parse_tag_name(iter, has_name, 'NBT_SHORT_TAG'), TO_INT16(iter.parse_next(2)))
@@ -102,7 +102,7 @@ def parse_byte_array_tag(iter: NBTScanner, has_name: bool = True) -> NBTByteArra
 def parse_string_tag(iter: NBTScanner, has_name: bool = True) -> NBTStringTag:
     tag_name = parse_tag_name(iter, has_name, 'NBT_STRING_TAG')
     string_size = TO_U_INT16(iter.parse_next(2))
-    text = ''.join([chr(c) for c in iter.parse_next(string_size)])
+    text = ''.join([chr(c) for c in iter.parse_next(string_size.value)])
     return NBTStringTag(tag_name, text)
 
 def parse_list_tag(iter: NBTScanner, has_name: bool = True) -> NBTListTag:
