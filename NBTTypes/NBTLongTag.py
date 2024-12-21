@@ -1,4 +1,4 @@
-from NBTTypes.NBTTag import NBTTag
+from .NBTTag import NBTTag
 from ctypes import c_longlong
 
 class NBTLongTag(NBTTag):

@@ -1,4 +1,4 @@
-from NBTTypes.NBTTag import NBTTag
+from .NBTTag import NBTTag
 from typing import Any, List
 
 class NBTCompoundTag(NBTTag):
