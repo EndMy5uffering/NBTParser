@@ -26,6 +26,8 @@ class NBTTag:
         with open(path, 'wb') as file:
             file.write(self.to_bytes())
 
-
     def __str__(self) -> str:
         return self.to_str()
+    
+    def __repr__(self) -> str:
+        return f"<{self.__class__.TAG_ID} {self.__class__.__name__}> name: {self.tag_name}"

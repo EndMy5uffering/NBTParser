@@ -3,7 +3,7 @@ from . import NBTTag
 class NBTEndTag(NBTTag):
 
     TAG_ID = 0x0
-    def __init__(self, tag_name: str):
+    def __init__(self, tag_name:str="TAG_End"):
         super().__init__(tag_name, None)
 
     def to_bytes(self) -> bytes:

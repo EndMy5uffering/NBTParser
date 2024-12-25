@@ -30,3 +30,9 @@ class NBTCompoundTag(NBTTag):
     
     def to_str(self, offset: int = 0, offsetChr: str = '\t') -> str:
         return self._strH(offset, offsetChr, f'len({str(len(self.get_tags()))})') + '\n' + '\n'.join([f'{e.to_str(offset+1, offsetChr)}' for e in self.get_tags()]) + '\n' + f'{(offsetChr*offset)}<{self.get_nbt_type()} END>'
+    
+    def __getitem__(self, key:str) -> NBTTag:
+        ret = self.get_tag_by_name(tag_name=key)
+        if ret is None:
+            raise KeyError()
+        return ret
