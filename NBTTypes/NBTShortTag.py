@@ -12,7 +12,7 @@ class NBTShortTag(NBTTag):
         return self.payload
     
     def to_bytes(self) -> bytes:
-        return super().to_bytes() + self.get_short().value.to_bytes(2, 'big')
+        return super().to_bytes() + self.get_short().value.to_bytes(2, 'big', signed=True)
     
     def to_str(self, offset: int = 0, offsetChr: str = '\t') -> str:
         return self._strH(offset, offsetChr, str(self.get_short().value))
