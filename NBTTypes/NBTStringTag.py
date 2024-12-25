@@ -1,4 +1,4 @@
-from .NBTTag import NBTTag
+from . import NBTTag
 import struct
 
 class NBTStringTag(NBTTag):

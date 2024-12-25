@@ -1,17 +1,4 @@
-from NBTTypes.NBTByteArrayTag import NBTByteArrayTag
-from NBTTypes.NBTByteTag import NBTByteTag
-from NBTTypes.NBTCompoundTag import NBTCompoundTag
-from NBTTypes.NBTDoubleTag import NBTDoubleTag
-from NBTTypes.NBTEndTag import NBTEndTag
-from NBTTypes.NBTFloatTag import NBTFloatTag
-from NBTTypes.NBTIntArrayTag import NBTIntArrayTag
-from NBTTypes.NBTIntTag import NBTIntTag
-from NBTTypes.NBTListTag import NBTListTag
-from NBTTypes.NBTLongArrayTag import NBTLongArrayTag
-from NBTTypes.NBTLongTag import NBTLongTag
-from NBTTypes.NBTShortTag import NBTShortTag
-from NBTTypes.NBTStringTag import NBTStringTag
-from NBTTypes.NBTTag import NBTTag
+from NBTTypes import *
 from ctypes import c_byte, c_short, c_longlong, c_float, c_double, c_uint8, c_uint16, c_uint32, c_ulonglong
 import struct
 from typing import Dict, Callable, List
