@@ -1,3 +1,4 @@
+from .NBTTag import NBTTag
 from .NBTByteArrayTag import NBTByteArrayTag
 from .NBTByteTag import NBTByteTag
 from .NBTCompoundTag import NBTCompoundTag
@@ -11,4 +12,3 @@ from .NBTLongArrayTag import NBTLongArrayTag
 from .NBTLongTag import NBTLongTag
 from .NBTShortTag import NBTShortTag
 from .NBTStringTag import NBTStringTag
-from .NBTTag import NBTTag

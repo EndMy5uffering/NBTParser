@@ -1,3 +1,6 @@
 __pycache__/
+__debug__/
+debug.py
 *.schem
 Test_*.py
+.gitignore
