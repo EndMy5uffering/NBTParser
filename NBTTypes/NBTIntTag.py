@@ -10,7 +10,7 @@ class NBTIntTag(NBTTag):
         return self.payload
     
     def to_bytes(self) -> bytes:
-        return super().to_bytes() + self.get_int().to_bytes(4, 'big')
+        return super().to_bytes() + self.get_int().to_bytes(4, 'big', signed=True)
     
     def to_str(self, offset: int = 0, offsetChr: str = '\t') -> str:
         return self._strH(offset, offsetChr, str(self.get_int()))
