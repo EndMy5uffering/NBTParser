@@ -1,4 +1,4 @@
-from .NBTTag import NBTTag
+from . import NBTTag
 from ctypes import c_longlong
 from typing import List
 import struct

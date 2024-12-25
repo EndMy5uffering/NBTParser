@@ -1,4 +1,4 @@
-from .NBTTag import NBTTag
+from . import NBTTag
 
 class NBTIntTag(NBTTag):
 
