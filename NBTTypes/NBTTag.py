@@ -1,4 +1,5 @@
 from pathlib import Path
+import gzip
 
 class NBTTag:
 
@@ -24,7 +25,7 @@ class NBTTag:
     
     def write_to_file(self, path: Path):
         with open(path, 'wb') as file:
-            file.write(self.to_bytes())
+            file.write(gzip.compress(self.to_bytes()))
 
     def __str__(self) -> str:
         return self.to_str()
